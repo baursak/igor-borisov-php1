@@ -1,0 +1,7 @@
+# Apache server settings
+# Options Indexes FollowSymLinks
+# DirectoryIndex index.php
+AddDefaultCharset utf-8
+<IfModule dir_module>
+    DirectoryIndex
+</IfModule>
