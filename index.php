@@ -22,11 +22,11 @@ if ($hour >= 0 && $hour <= 6) {
 // Инициализация массива
 
 $leftMenu = [
-	"index.php"   => "Домой",
-	"about.php"   => "О нас",
-	"contact.php" => "Контакты",
-	"table.php"   => "Таблица умножения",
-	"calc.php"    => "Калькулятор",
+	["href" => "index.php", "link" => "Домой"],
+	["href" => "about.php", "link" => "О нас"],
+	["href" => "contact.php", "link" => "Контакты"],
+	["href" => "table.php", "link" => "Таблица умножения"],
+	["href" => "calc.php", "link" => "Калькулятор"],
 ];
 ?>
 <!DOCTYPE html>
@@ -78,8 +78,8 @@ $leftMenu = [
         <h2>Навигация по сайту</h2>
         <!-- Меню -->
         <ul>
-			<? foreach ($leftMenu as $key => $value): ?>
-                <li><a href="<?= $key ?>"><?= $value ?></a></li>
+			<? foreach ($leftMenu as $value): ?>
+                <li><a href="<?= $value['href'] ?>"><?= $value['link'] ?></a></li>
 			<? endforeach ?>
         </ul>
         <!-- Меню -->
