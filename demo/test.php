@@ -1,9 +1,8 @@
 <?php
-$arr = [
-	"user_name"=>"John",
-	"password"=>12345,
-	"age"=>25,
-];
-foreach ($arr as $key=>$value){
-	echo "$key : $value\n";
+function say($name){
+	echo "<p>hello, $name</p>";
 }
+say("John");
+$n = "Mike";
+say($n);
+say();
