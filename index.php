@@ -28,6 +28,18 @@ $leftMenu = [
 	["href" => "table.php", "link" => "Таблица умножения"],
 	["href" => "calc.php", "link" => "Калькулятор"],
 ];
+function drawMenu($menu, $vertical = true) {
+    $style = "";
+    if(!$vertical){
+        $style = " style='display: inline; margin-right: 15px'";
+    }
+	echo "<ul>";
+	foreach ($menu as $value):
+		echo "<li$style><a href=\"{$value['href']}\">{$value['link']}</a></li>";
+	endforeach;
+	echo "</ul>";
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,16 +89,19 @@ $leftMenu = [
         <!-- Навигация -->
         <h2>Навигация по сайту</h2>
         <!-- Меню -->
-        <ul>
-			<? foreach ($leftMenu as $value): ?>
-                <li><a href="<?= $value['href'] ?>"><?= $value['link'] ?></a></li>
-			<? endforeach ?>
-        </ul>
+        /* Вызов Функции для отрисовки меню */
+		<?php
+		drawMenu($leftMenu, true);
+		?>
         <!-- Меню -->
         <!-- Навигация -->
     </div>
     <div id="footer">
         <!-- Нижняя часть страницы -->
+        <?php
+        drawMenu($leftMenu, false);
+        ?>
+        <hr>
         &copy; Супер Мега Веб-мастер, 2000 &ndash;
 		<?= $year ?>
         <!-- Нижняя часть страницы -->
