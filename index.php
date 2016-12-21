@@ -29,10 +29,10 @@ $leftMenu = [
 	["href" => "calc.php", "link" => "Калькулятор"],
 ];
 function drawMenu($menu, $vertical = true) {
-    $style = "";
-    if(!$vertical){
-        $style = " style='display: inline; margin-right: 15px'";
-    }
+	$style = "";
+	if ( ! $vertical) {
+		$style = " style='display: inline; margin-right: 15px'";
+	}
 	echo "<ul>";
 	foreach ($menu as $value):
 		echo "<li$style><a href=\"{$value['href']}\">{$value['link']}</a></li>";
@@ -98,9 +98,9 @@ function drawMenu($menu, $vertical = true) {
     </div>
     <div id="footer">
         <!-- Нижняя часть страницы -->
-        <?php
-        drawMenu($leftMenu, false);
-        ?>
+		<?php
+		drawMenu($leftMenu, false);
+		?>
         <hr>
         &copy; Супер Мега Веб-мастер, 2000 &ndash;
 		<?= $year ?>
