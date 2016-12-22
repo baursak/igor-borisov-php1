@@ -1,4 +1,18 @@
 <?php
+// функция перехвата ошибок
+function myError($errno, $errmsg, $errfile, $errline) {
+	// логируем пользовательские ошибки
+	$dt  = date("d-m-Y H:i:s");
+	$str = "[$dt] - $errmsg in $errfile:$errline\n";
+	switch ($errno) {
+		case E_USER_ERROR:
+		case E_USER_WARNING:
+		case E_USER_NOTICE:
+			echo $errmsg;
+	}
+	error_log("$str", 3, "error.log");
+}
+
 function drawTable($cols = 10, $rows = 10) {
 	echo "<table border='1' width='200'>";
 	for ($i = 1; $i <= $rows; $i ++):
@@ -16,7 +30,7 @@ function drawTable($cols = 10, $rows = 10) {
 }
 
 function drawMenu($menu, $vertical = true) {
-	if(!is_array($menu)){
+	if (!is_array($menu)) {
 		return false;
 	}
 	$style = "";

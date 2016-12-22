@@ -1,4 +1,5 @@
 <?php
+const ERR_ON_DRAW_MENU = "Sorry...";
 $leftMenu = [
 	["href" => "index.php", "link" => "Домой"],
 	["href" => "about.php", "link" => "О нас"],

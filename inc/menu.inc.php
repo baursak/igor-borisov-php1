@@ -3,7 +3,8 @@
 <!-- Вызов Функции для отрисовки меню -->
 <?php
 if(!drawMenu($leftMenu, true)){
-    echo "Sorry...";
+	// отлавливаем ошибки
+    trigger_error(ERR_ON_DRAW_MENU, E_USER_ERROR);
 }
 ?>
 <!-- Меню -->
