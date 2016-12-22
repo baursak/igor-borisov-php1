@@ -16,6 +16,9 @@ function drawTable($cols = 10, $rows = 10) {
 }
 
 function drawMenu($menu, $vertical = true) {
+	if(!is_array($menu)){
+		return false;
+	}
 	$style = "";
 	if (!$vertical) {
 		$style = " style='display: inline; margin-right: 15px'";
@@ -25,4 +28,5 @@ function drawMenu($menu, $vertical = true) {
 		echo "<li$style><a href=\"{$value['href']}\">{$value['link']}</a></li>";
 	endforeach;
 	echo "</ul>";
+	return true;
 }

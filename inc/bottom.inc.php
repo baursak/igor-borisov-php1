@@ -1,5 +1,7 @@
 <?php
-drawMenu($leftMenu, false);
+if(!drawMenu($leftMenu, false)){
+    echo "Sorry...";
+}
 ?>
 &copy; Супер Мега Веб-мастер, 2000 &ndash;
 <?= $year ?>

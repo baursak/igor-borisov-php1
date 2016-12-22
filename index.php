@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 require_once "inc/lib.inc.php";
 require_once "inc/data.inc.php";
 // Menu

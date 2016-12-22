@@ -2,6 +2,8 @@
 <!-- Меню -->
 <!-- Вызов Функции для отрисовки меню -->
 <?php
-drawMenu($leftMenu, true);
+if(!drawMenu($leftMenu, true)){
+    echo "Sorry...";
+}
 ?>
 <!-- Меню -->
